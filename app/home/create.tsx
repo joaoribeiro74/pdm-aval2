@@ -58,6 +58,7 @@ export default function CreateSneaker() {
         }}
       />
       <TextInput
+        testID="brand-sneaker"
         style={[styles.input, { borderColor: colors.borderColor, boxShadow: colors.boxShadow.default, backgroundColor: colors.backgroundColor, color: colors.textColor }]}
         placeholder="Marca"
         placeholderTextColor={colors.textColor}
@@ -65,6 +66,7 @@ export default function CreateSneaker() {
         onChangeText={setBrand}
       />
       <TextInput
+        testID="name-sneaker"
         style={[styles.input, { borderColor: colors.borderColor, boxShadow: colors.boxShadow.default, backgroundColor: colors.backgroundColor, color: colors.textColor }]}
         placeholder="Nome"
         placeholderTextColor={colors.textColor}
@@ -72,6 +74,7 @@ export default function CreateSneaker() {
         onChangeText={setName}
       />
       <TextInput
+        testID="size-sneaker"
         style={[styles.input, { borderColor: colors.borderColor, boxShadow: colors.boxShadow.default, backgroundColor: colors.backgroundColor, color: colors.textColor }]}
         placeholder="Tamanho"
         placeholderTextColor={colors.textColor}
@@ -81,6 +84,7 @@ export default function CreateSneaker() {
         maxLength={2}
       />
       <TextInput
+        testID="color-sneaker"
         style={[styles.input, { borderColor: colors.borderColor, boxShadow: colors.boxShadow.default, backgroundColor: colors.backgroundColor, color: colors.textColor }]}
         placeholder="Cor"
         placeholderTextColor={colors.textColor}
@@ -88,6 +92,7 @@ export default function CreateSneaker() {
         onChangeText={setColor}
       />
       <MaskedTextInput
+        testID="price-sneaker"
         type="currency"
         options={{
           prefix: 'R$ ',
@@ -105,13 +110,14 @@ export default function CreateSneaker() {
         placeholderTextColor={colors.textColor}
       />
       <TextInput
+        testID="url-sneaker"
         style={[styles.input, { borderColor: colors.borderColor, boxShadow: colors.boxShadow.default, backgroundColor: colors.backgroundColor, color: colors.textColor}]}
         placeholder="URL da imagem (opcional)"
         placeholderTextColor={colors.textColor}
         value={imageLink}
         onChangeText={setImageLink}
       />
-      <StyledButton title="Adicionar" onPress={handleCreate} />
+      <StyledButton testID="add-sneaker" title="Adicionar" onPress={handleCreate} />
     </ScrollView>
   );
 }

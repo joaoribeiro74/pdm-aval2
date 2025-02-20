@@ -1,0 +1,23 @@
+appId: com.fare.app
+---
+- assertVisible:
+    id: create-button
+- scrollUntilVisible:
+    element:
+      id: sneaker-item-gcbBY95p5totC61McVBC
+    centerElement: true
+- tapOn:
+    id: show-details-gcbBY95p5totC61McVBC
+- tapOn:
+    id: edit-sneaker
+- tapOn:
+    id: edit-price
+- eraseText: 10
+- inputText: 65000
+- hideKeyboard
+- tapOn:
+    id: att-sneaker
+- scrollUntilVisible:
+    element:
+      id: sneaker-item-gcbBY95p5totC61McVBC
+    centerElement: true

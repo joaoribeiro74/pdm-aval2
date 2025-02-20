@@ -1,5 +1,5 @@
 import { Stack, useRouter, useGlobalSearchParams } from "expo-router";
-import { Alert, TextInput, View, StyleSheet, Text } from "react-native";
+import { Alert, TextInput, View, StyleSheet, Text, ScrollView } from "react-native";
 import StyledButton from "../../../components/StyledButton";
 import { useState } from "react";
 import useCollection from "../../../firebase/hooks/useCollection";
@@ -44,7 +44,7 @@ export default function Edit() {
   };
 
   return (
-    <View style={[styles.container, { backgroundColor: colors.backgroundColor}]}>
+    <ScrollView style={[styles.container, { backgroundColor: colors.backgroundColor}]}>
       <Stack.Screen options={{ title: "Editar Sneaker" }} />
 
       <Text style={[styles.text, { color: colors.textColor }]}>Marca:</Text>
@@ -76,6 +76,7 @@ export default function Edit() {
       />
       <Text style={[styles.text, { color: colors.textColor }]}>Preço:</Text>
       <MaskedTextInput
+        testID="edit-price"
         type="currency"
         options={{
           prefix: 'R$ ',
@@ -96,8 +97,8 @@ export default function Edit() {
         value={image}
         onChangeText={setImage}
       />
-      <StyledButton title="Atualizar" onPress={handleUpdate} />
-    </View>
+      <StyledButton testID="att-sneaker" title="Atualizar" onPress={handleUpdate} />
+    </ScrollView>
   );
 }
 

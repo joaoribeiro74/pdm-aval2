@@ -35,6 +35,7 @@ export default function ViewDetails({ sneaker }: ViewDetailsProps) {
             </View>
             <View style={styles.buttonContainer}>
                 <StyledButton
+                    testID={`show-details-${sneaker.id}`} 
                     title="Detalhes →"
                     onPress={() => {
                     if (sneaker.id) {

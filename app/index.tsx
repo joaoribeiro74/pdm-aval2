@@ -12,8 +12,8 @@ export default function _screen() {
   const router = useRouter();
   const { colors, theme } = useTheme();
 
-  const [email, setEmail] = useState("user@example.com");
-  const [password, setPassword] = useState("123456");
+  const [email, setEmail] = useState("fulano@example.com");
+  const [password, setPassword] = useState("12345678");
 
   useEffect(() => {
     if (user) {
@@ -44,7 +44,8 @@ export default function _screen() {
           value={email}
           onChangeText={setEmail}
           placeholder="Email"
-          placeholderTextColor="#black"
+          placeholderTextColor={colors.textColor}
+          testID="input-email"
         />
         <TextInput
           style={[styles.input, { borderColor: colors.borderColor, boxShadow: colors.boxShadow.default, backgroundColor: colors.backgroundColor, color: colors.textColor }]}
@@ -52,11 +53,13 @@ export default function _screen() {
           onChangeText={setPassword}
           secureTextEntry
           placeholder="Senha"
-          placeholderTextColor="#black"
+          placeholderTextColor={colors.textColor}
+          testID="input-password"
         />
 
         <StyledButton
           title="Login"
+          testID="button-login"
           onPress={async () => {
             try {
               await login(email, password);

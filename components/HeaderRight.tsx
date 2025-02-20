@@ -18,7 +18,7 @@ export default function HeaderRight() {
 
   return (
     <>
-      <TouchableOpacity onPress={toggleTheme} style={{ marginRight: 10 }}>
+      <TouchableOpacity testID="theme-icon" onPress={toggleTheme} style={{ marginRight: 10 }}>
         {themeIcon}
       </TouchableOpacity>
       <StyledLogout
@@ -31,6 +31,7 @@ export default function HeaderRight() {
             Alert.alert("Erro de Logout", error.toString());
           }
         }}
+        testID="logout-button"
         title={"Logout"}
         style={{  }}
       />

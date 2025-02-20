@@ -1,0 +1,32 @@
+appId: com.fare.app
+---
+- openLink: exp://192.168.0.5:8081
+- assertVisible:
+    id: create-button
+- tapOn:
+    id: create-button
+- tapOn:
+    id: brand-sneaker
+- inputText: Nike Air Jordan
+- tapOn:
+    id: name-sneaker
+- inputText: 1 Low
+- tapOn:
+    id: size-sneaker
+- inputText: 42
+- tapOn:
+    id: color-sneaker
+- inputText: Preto, Branco e Vermelho
+- tapOn:
+    id: price-sneaker
+- inputText: 104499
+- tapOn:
+    id: url-sneaker
+- inputText: https://imgnike-a.akamaihd.net/360x360/0165105CA4.jpg
+- hideKeyboard
+- tapOn:
+    id: add-sneaker
+
+
+
+

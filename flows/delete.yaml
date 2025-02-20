@@ -1,0 +1,17 @@
+appId: com.fare.app
+---
+- scrollUntilVisible:
+    element:
+      id: sneaker-item-tGxRfohVpAkT0XyA9dAs
+    direction: UP
+    centerElement: true
+- tapOn:
+    id: theme-icon
+- tapOn:
+    id: show-details-tGxRfohVpAkT0XyA9dAs
+- tapOn:
+    id: delete-sneaker
+- assertVisible:
+    text: Você tem certeza?
+- tapOn:
+    text: Sim

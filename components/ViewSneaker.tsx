@@ -23,6 +23,7 @@ export default function ViewSneaker({ sneaker, onDelete, onEdit }: ViewSneakerPr
 
       <View style={{ flexDirection: "row", justifyContent: 'space-between' }}>
       <StyledButton
+          testID="edit-sneaker"
           title="Editar"
           onPress={() => {
             onEdit(sneaker.id);
@@ -31,6 +32,7 @@ export default function ViewSneaker({ sneaker, onDelete, onEdit }: ViewSneakerPr
         />
 
         <StyledButton
+          testID="delete-sneaker"
           title="Deletar"
           onPress={() => {
             if (sneaker.id) {

@@ -26,6 +26,7 @@ export default function Home() {
       />
 
       <StyledButton
+        testID="create-button"
         style={{ marginBottom: 20, marginTop: -10}}
         title="Criar sneaker"
         onPress={() => router.push("/home/create")}
@@ -35,9 +36,12 @@ export default function Home() {
         <Loading />
       ) : (
         <FlatList
+          testID="card-sneaker"
           data={data}
           renderItem={({ item }) => (
-            <View style={{ marginBottom: 10 }}>
+            <View 
+              testID={`sneaker-item-${item.id}`} 
+              style={{ marginBottom: 10 }}>
               <ViewDetails sneaker={item} />
             </View>
           )}

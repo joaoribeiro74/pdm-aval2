@@ -41,7 +41,7 @@ export default function SneakerDetails() {
       <Stack.Screen
         options={{
           title: "Detalhes",
-          headerRight: () => <HeaderRight showEmail={false} />,
+          headerRight: () => <HeaderRight />,
         }}
       />
 

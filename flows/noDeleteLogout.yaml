@@ -1,0 +1,22 @@
+appId: com.fare.app
+---
+- extendedWaitUntil:
+    visible:
+        id: create-button
+    timeout: 7000
+- scrollUntilVisible:
+    element:
+      id: sneaker-item-RFiPoxyxpZHPqtM3LoGC
+    direction: DOWN
+    centerElement: true
+- tapOn:
+    id: show-details-RFiPoxyxpZHPqtM3LoGC
+- tapOn:
+    id: delete-sneaker
+- assertVisible:
+    text: Você tem certeza?
+- tapOn:
+    text: Não
+- tapOn: Navigate up
+- tapOn:
+    id: logout-button
