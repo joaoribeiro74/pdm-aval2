@@ -55,9 +55,9 @@ Além disso, implementamos testes unitários e testes E2E para validar o funcion
 
 ### Diferença entre Testes Unitários e Testes E2E (End-to-End):
 
-Testes unitários avaliam partes isoladas do código, como funções, componentes ou hooks, sem se preocupar com a integração com o restante do sistema. Eles garantem que cada unidade do sistema funcione corretamente, ajudando a manter a qualidade do software e reduzindo o risco de erros para os usuários finais.
+- `Testes unitários` avaliam partes isoladas do código, como funções, componentes ou hooks, sem se preocupar com a integração com o restante do sistema. Eles garantem que cada unidade do sistema funcione corretamente, ajudando a manter a qualidade do software e reduzindo o risco de erros para os usuários finais.
 
-Testes E2E (End-to-End) simulam a interação real do usuário com a aplicação, verificando fluxos completos, como login, navegação e preenchimento de formulários. Esses testes validam a integração entre diferentes componentes e sistemas, garantindo que o aplicativo funcione corretamente de ponta a ponta.
+- `Testes E2E (End-to-End)` simulam a interação real do usuário com a aplicação, verificando fluxos completos, como login, navegação e preenchimento de formulários. Esses testes validam a integração entre diferentes componentes e sistemas, garantindo que o aplicativo funcione corretamente de ponta a ponta.
 
 ### Testes Unitários:
 
