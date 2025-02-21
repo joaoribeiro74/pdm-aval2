@@ -78,16 +78,16 @@ Testes End-to-End foram realizados para garantir que a navegação e operações
 
 ### 1. Fluxo de navegação para criar um item:
 
-    O teste simula a navegação para a tela de criação de um tênis, insere as informações necessárias.
+- O teste simula a navegação para a tela de criação de um tênis, insere as informações necessárias.
 
 ### 2. Fluxo de navegação para editar um item:
 
-    O teste simula a navegação para a tela de edição de um tênis, realiza a alteração de algum dado, e verifica se a alteração foi realizada corretamente.
+- O teste simula a navegação para a tela de edição de um tênis, realiza a alteração de algum dado, e verifica se a alteração foi realizada corretamente.
 
 ### 3. Fluxo de navegação para deletar um item:
 
-    O teste simula a navegação até o item a ser excluído, clica no botão de deletar e confirma a exclusão.
+- O teste simula a navegação até o item a ser excluído, clica no botão de deletar e confirma a exclusão.
 
 ### 4. Fluxo de não deletar um item e realizar logout:
 
-    O teste simula a navegação para excluir um item, mas escolhe não deletá-lo após o alerta de confirmação. Em seguida, realiza o logout da aplicação para garantir que a sessão seja finalizada corretamente.
+- O teste simula a navegação para excluir um item, mas escolhe não deletá-lo após o alerta de confirmação. Em seguida, realiza o logout da aplicação para garantir que a sessão seja finalizada corretamente.
