@@ -51,15 +51,15 @@ Esta aplicação foi construída com o objetivo de exibir e gerenciar informaç�
 
 Além disso, implementamos testes unitários e testes E2E para validar o funcionamento de componentes e a integração entre as funcionalidades da aplicação.
 
-## Requisitos
+# Requisitos
 
-### Diferença entre Testes Unitários e Testes E2E (End-to-End):
+## Diferença entre Testes Unitários e Testes E2E (End-to-End):
 
 - `Testes unitários` avaliam partes isoladas do código, como funções, componentes ou hooks, sem se preocupar com a integração com o restante do sistema. Eles garantem que cada unidade do sistema funcione corretamente, ajudando a manter a qualidade do software e reduzindo o risco de erros para os usuários finais.
 
 - `Testes E2E (End-to-End)` simulam a interação real do usuário com a aplicação, verificando fluxos completos, como login, navegação e preenchimento de formulários. Esses testes validam a integração entre diferentes componentes e sistemas, garantindo que o aplicativo funcione corretamente de ponta a ponta.
 
-### Testes Unitários:
+## Testes Unitários:
 
 Foram implementados testes unitários para dois componentes principais da aplicação: `ViewSneaker` e `CardSneaker`.
 
@@ -76,7 +76,7 @@ Os testes validam funcionalidades cruciais como a renderização correta dos bot
 - **Ação do botão Deletar**: Validamos que o alerta de confirmação de exclusão é disparado e que, ao confirmar, a função `onDelete` é chamada corretamente.
 
 
-### Testes E2E:
+## Testes E2E:
 
 Testes End-to-End foram realizados para garantir que a navegação e operações no app, como a criação, edição, exclusão de itens e logout, funcionem de maneira fluida e sem falhas.
 
