@@ -57,7 +57,7 @@ Testes E2E (End-to-End) simulam a interação real do usuário com a aplicação
 
 ### Testes Unitários:
 
-Foram implementados testes unitários para dois componentes principais da aplicação: ViewSneaker e CardSneaker.
+Foram implementados testes unitários para dois componentes principais da aplicação: `ViewSneaker` e `CardSneaker`.
 
 Os testes validam funcionalidades cruciais como a renderização correta dos botões e interações com esses componentes, como a simulação de pressionamento de botões.
 
