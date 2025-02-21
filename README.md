@@ -61,12 +61,12 @@ Foram implementados testes unitários para dois componentes principais da aplica
 
 Os testes validam funcionalidades cruciais como a renderização correta dos botões e interações com esses componentes, como a simulação de pressionamento de botões.
 
-1. Testes para o componente *CardSneaker*:
+### 1. Testes para o componente `CardSneaker`:
 - **Renderização sem detalhes**: Validamos se o componente renderiza o nome e a marca do tênis sem os detalhes adicionais.
 - **Renderização com detalhes**: Verificamos se os detalhes como cor, tamanho e preço são renderizados quando a prop `showDetails` é verdadeira.
 - **Imagem padrão**: Validamos se uma imagem padrão é exibida quando a URL da imagem do tênis não está presente.
 
-2. Testes para o componente *ViewSneaker*:
+### 2. Testes para o componente `ViewSneaker`:
 - **Renderização de Botões**: Verificamos se os botões de editar e deletar aparecem corretamente.
 - **Ação do botão Editar**: Validamos que o botão de editar chama a função `onEdit` com o `id` correto do sneaker.
 - **Ação do botão Deletar**: Validamos que o alerta de confirmação de exclusão é disparado e que, ao confirmar, a função `onDelete` é chamada corretamente.
@@ -76,18 +76,18 @@ Os testes validam funcionalidades cruciais como a renderização correta dos bot
 
 Testes End-to-End foram realizados para garantir que a navegação e operações no app, como a criação, edição, exclusão de itens e logout, funcionem de maneira fluida e sem falhas.
 
-1. Fluxo de navegação para criar um item:
+### 1. Fluxo de navegação para criar um item:
 
     O teste simula a navegação para a tela de criação de um tênis, insere as informações necessárias.
 
-2. Fluxo de navegação para editar um item:
+### 2. Fluxo de navegação para editar um item:
 
     O teste simula a navegação para a tela de edição de um tênis, realiza a alteração de algum dado, e verifica se a alteração foi realizada corretamente.
 
-3. Fluxo de navegação para deletar um item:
+### 3. Fluxo de navegação para deletar um item:
 
     O teste simula a navegação até o item a ser excluído, clica no botão de deletar e confirma a exclusão.
 
-3. Fluxo de não deletar um item e realizar logout:
+### 4. Fluxo de não deletar um item e realizar logout:
 
     O teste simula a navegação para excluir um item, mas escolhe não deletá-lo após o alerta de confirmação. Em seguida, realiza o logout da aplicação para garantir que a sessão seja finalizada corretamente.
