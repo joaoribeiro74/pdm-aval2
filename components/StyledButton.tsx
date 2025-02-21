@@ -12,7 +12,7 @@ type StyledButtonProps = {
   title: string;
 } & TouchableOpacityProps;
 
-export default function StyledButton({ title, ...props }: StyledButtonProps) {
+export default function StyledButton({ title, testID, ...props }: StyledButtonProps) {
   const { colors } = useTheme();
   
   const [isActive, setIsActive] = useState(false);
@@ -26,7 +26,7 @@ export default function StyledButton({ title, ...props }: StyledButtonProps) {
   };
 
   return (
-    <TouchableOpacity {...props} style={[styles.button, { backgroundColor: colors.backgroundColor, borderColor: colors.borderColor, boxShadow: colors.boxShadow.default }, props.style, isActive && styles.active]}
+    <TouchableOpacity {...props} testID={testID} style={[styles.button, { backgroundColor: colors.backgroundColor, borderColor: colors.borderColor, boxShadow: colors.boxShadow.default }, props.style, isActive && styles.active]}
     onPressIn={handlePressIn}
     onPressOut={handlePressOut}>
       <Text style={[styles.buttonText, { color: colors.textColor}]}>{title}</Text>

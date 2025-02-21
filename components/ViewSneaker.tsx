@@ -35,7 +35,9 @@ export default function ViewSneaker({ sneaker, onDelete, onEdit }: ViewSneakerPr
           testID="delete-sneaker"
           title="Deletar"
           onPress={() => {
+            console.log("Deletar pressionado");
             if (sneaker.id) {
+              console.log("ID encontrado, disparando alerta");
               Alert.alert("Deletar Sneaker", "Você tem certeza?", [
                 {
                   text: "Sim",
