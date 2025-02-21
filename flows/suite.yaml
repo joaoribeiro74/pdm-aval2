@@ -1,5 +1,0 @@
-tests:
-  - path: flows/create.yaml
-  - path: flows/edit.yaml
-  - path: flows/delete.yaml
-  - path: flows/noDeleteLogout.yaml

@@ -5,7 +5,6 @@ import { ThemeProvider } from '@/context/ThemeContext';
 import Sneaker from '@/types/Sneaker';
 import { Image } from 'react-native';
 
-// Cria uma função auxiliar para renderizar com o ThemeProvider
 const renderWithTheme = (ui: React.ReactElement) => {
   return render(<ThemeProvider>{ui}</ThemeProvider>);
 };
@@ -27,7 +26,7 @@ const sneakerMockWithoutImage: Sneaker = {
     color: 'Azul',
     size: 43,
     price: 350.00,
-    image: '', // Nenhuma URL de imagem fornecida
+    image: '',
   };
 
   describe('CardSneaker Component', () => {
@@ -36,11 +35,9 @@ const sneakerMockWithoutImage: Sneaker = {
         <CardSneaker sneaker={sneakerMock}>{null}</CardSneaker>
       );
   
-      // Verifica se o nome e a id aparecem
       expect(getByText(`${sneakerMock.brand} ${sneakerMock.name}`)).toBeTruthy();
       expect(getByText(/ID:/)).toBeTruthy();
   
-      // showDetails é false por padrão, os detalhes não devem aparecer
       expect(queryByText(/Cor\(es\):/)).toBeNull();
       expect(queryByText(/Tamanho:/)).toBeNull();
     });
@@ -49,15 +46,13 @@ const sneakerMockWithoutImage: Sneaker = {
       const { getByText, getByTestId } = renderWithTheme(
         <CardSneaker sneaker={sneakerMock} showDetails>{null}</CardSneaker>
       );
-  
-      // Verifica os detalhes: cores, tamanho e preço
+
       expect(getByText(/Cor\(es\):/)).toBeTruthy();
       expect(getByText(sneakerMock.color)).toBeTruthy();
       expect(getByText(/Tamanho:/)).toBeTruthy();
       expect(getByText(String(sneakerMock.size))).toBeTruthy();
       expect(getByText(/R\$ ?\d+,\d{2}/)).toBeTruthy();
-  
-      // Verifica se a imagem da URL foi carregada corretamente
+
       const image = getByTestId('sneaker-image');
       expect(image.props.source.uri).toBe(sneakerMock.image);
     });
@@ -66,8 +61,7 @@ const sneakerMockWithoutImage: Sneaker = {
       const { getByTestId } = renderWithTheme(
         <CardSneaker sneaker={sneakerMockWithoutImage} showDetails>{null}</CardSneaker>
       );
-  
-      // Verifica se a imagem padrão foi renderizada
+
       const image = getByTestId('sneaker-image');
         expect(image.props.source).toBe(require('@/assets/images/Sneaker.png'));
     });

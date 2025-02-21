@@ -1,14 +1,18 @@
 appId: com.fare.app
 ---
-- scrollUntilVisible:
-    element:
-      id: sneaker-item-tGxRfohVpAkT0XyA9dAs
-    direction: UP
-    centerElement: true
+- extendedWaitUntil:
+    visible:
+        id: create-button
+    timeout: 7000
 - tapOn:
     id: theme-icon
+- scrollUntilVisible:
+    element:
+      id: sneaker-item-bza4CxRmRoTUflxsl5ob
+    direction: DOWN
+    centerElement: true
 - tapOn:
-    id: show-details-tGxRfohVpAkT0XyA9dAs
+    id: show-details-bza4CxRmRoTUflxsl5ob
 - tapOn:
     id: delete-sneaker
 - assertVisible:

@@ -3,25 +3,24 @@ import { render, fireEvent, waitFor } from "@testing-library/react-native";
 import ViewSneaker from "../ViewSneaker";
 import Sneaker from "../../types/Sneaker";
 import { ThemeProvider } from "@/context/ThemeContext";
+import { Alert } from "react-native";
 
-// Mock do CardSneaker para evitar renderização
 jest.mock("../CardSneaker", () => {
-  return () => <></>; // Retorna um componente vazio, apenas para evitar o teste do CardSneaker
+  return () => <></>;
 });
 
 jest.mock('react-native/Libraries/Animated/Animated', () => {
     const RealAnimated = jest.requireActual('react-native/Libraries/Animated/Animated');
     return {
       ...RealAnimated,
-      View: 'View', // Isso substitui o componente Animated.View por um componente simples View
+      View: 'View',
     };
 });
 
 jest.mock('react-native/Libraries/Components/Touchable/TouchableOpacity', () => {
-    return ({ children }: { children: React.ReactNode }) => <>{children}</>; // Define o tipo para children
+    return ({ children }: { children: React.ReactNode }) => <>{children}</>;
 });
 
-// Função auxiliar para renderizar com o ThemeProvider
 const renderWithTheme = (ui: React.ReactElement) => {
   return render(<ThemeProvider>{ui}</ThemeProvider>);
 };
@@ -40,13 +39,18 @@ describe("ViewSneaker", () => {
   const mockOnEdit = jest.fn();
   const mockOnDelete = jest.fn();
 
-  // Mock da função global alert
   beforeAll(() => {
-    globalThis.alert = jest.fn(); // Mocka o alerta global
+    jest.spyOn(Alert, 'alert').mockImplementation((title, message, buttons) => {
+      if (buttons && buttons.length > 0 && buttons[0].onPress) {
+        buttons[0].onPress();
+      }
+    });
+
+    jest.spyOn(global.console, 'log'); 
   });
 
   afterEach(() => {
-    jest.clearAllMocks(); // Limpa mocks após cada teste
+    jest.clearAllMocks();
   });
 
   it("deve renderizar os botões 'Editar' e 'Deletar'", () => {
@@ -68,22 +72,22 @@ describe("ViewSneaker", () => {
     expect(mockOnEdit).toHaveBeenCalledWith(mockSneaker.id);
   });
 
-  it("deve exibir um alerta ao pressionar o botão 'Deletar'", async () => {
+  it("deve chamar onDelete ao pressionar o botão 'Sim' no alerta", async () => {
     const { getByText } = renderWithTheme(
       <ViewSneaker sneaker={mockSneaker} onDelete={mockOnDelete} onEdit={mockOnEdit} />
     );
-  
+
     const deleteButton = getByText('Deletar');
+
     fireEvent.press(deleteButton);
-  
-    // Aguardar a execução do alert
+
     await waitFor(() => {
-      expect(global.alert).toHaveBeenCalledWith(
-        "Deletar Sneaker",
-        "Você tem certeza?",
-        expect.any(Array)
-      );
+      expect(global.console.log).toHaveBeenCalledWith("Deletar pressionado");
+      expect(global.console.log).toHaveBeenCalledWith("ID encontrado, disparando alerta");
+    });
+
+    await waitFor(() => {
+      expect(mockOnDelete).toHaveBeenCalled();
     });
   });
-  
 });
