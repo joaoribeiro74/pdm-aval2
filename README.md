@@ -47,6 +47,10 @@ maestro test flows/example.yaml
 
 # Descrição da solução
 
+Esta aplicação foi construída com o objetivo de exibir e gerenciar informações de tênis, permitindo que os usuários visualizem os detalhes de cada item e realizem operações como edição e exclusão de registros. A solução foi desenvolvida utilizando React Native com o Expo. O Firebase foi integrado para fornecer funcionalidades como autenticação de usuários e armazenamento de dados em tempo real, assegurando a persistência e a sincronização dos dados.
+
+Além disso, implementamos testes unitários e testes E2E para validar o funcionamento de componentes e a integração entre as funcionalidades da aplicação.
+
 ## Requisitos
 
 ### Diferença entre Testes Unitários e Testes E2E (End-to-End):
